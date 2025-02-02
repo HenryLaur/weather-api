@@ -1,9 +1,10 @@
 # Weather API with frontend and backend with postgres able to be deployed with docker
 
 run command: docker compose -f docker-compose.yml up --build
-backend: .\gradlew bootRun
-frontend: npm start
 
+backend: .\gradlew bootRun
+
+frontend: npm start
 
 When application starts, script loads 100 random city names to database and queries current temperature for all 100 cities
 
