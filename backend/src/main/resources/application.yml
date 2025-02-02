@@ -1,0 +1,23 @@
+spring:
+    datasource:
+        url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/weather}
+        username: ${SPRING_DATASOURCE_USERNAME:postgres}
+        password: ${SPRING_DATASOURCE_PASSWORD:root}
+    jpa:
+        hibernate:
+            ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:create-drop}
+    cache:
+        type: caffeine
+        caffeine:
+            spec: maximumSize=100,expireAfterWrite=1h
+
+server:
+    error:
+        include-message: always
+
+logging:
+    level:
+        org.springframework.cache: TRACE
+        com.github.benmanes.caffeine: DEBUG
+
+api-key: ${API_KEY}
